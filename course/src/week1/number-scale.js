@@ -1,3 +1,4 @@
+const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+-'
 function encode64(num){
     if(isNaN(num)) {
         throw new Error('请输入正确的数字')
@@ -10,7 +11,7 @@ function encode64(num){
         var cur = Number(numstrArr[i]);
         while(cur > 0){
             r[i] = r[i] || [];
-            r[i].unshift(String.fromCharCode(cur%64 + 48));
+            r[i].unshift(chars[cur%64]);
             cur = Math.floor(cur/64);
         }  
     }
@@ -32,7 +33,7 @@ function decode64(str){
             curArr = cur.split('').reverse();
         for(let j= 0; j < curArr.length; j++){
             resultArr[i] = resultArr[i] || 0;
-            resultArr[i] += (curArr[j].charCodeAt() - 48 )* Math.pow(64, j)
+            resultArr[i] += ( chars.indexOf(curArr[j])* Math.pow(64, j))
         }
     }
 
