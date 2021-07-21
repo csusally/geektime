@@ -72,20 +72,20 @@ export default class Engine {
     while (stack.length > 0) {
       let [pnode, pdom, scope] = stack.pop();
         console.log('scope', scope, pnode.attr.get("if") )
-      if (pnode.attr.get("if")){
-        let prop = pnode.attr.get("if").trim();
-        let props = prop.split(".");
-      
-        let val = scope[props[0]];
-
-        props.slice(1).forEach((item) => {
-            val = val[item];
-        });
+        if (pnode.attr.get("if")){
+            let prop = pnode.attr.get("if").trim();
+            let props = prop.split(".");
         
+            let val = scope[props[0]];
 
-        if(!val){
-            continue;
-        }
+            props.slice(1).forEach((item) => {
+                val = val[item];
+            });
+            
+
+            if(!val){
+                continue;
+            }
       }
 
       if (pnode.attr.get("for")) {
