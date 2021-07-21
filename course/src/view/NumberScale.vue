@@ -15,7 +15,8 @@
 
 <script>
 
-import {encode64, decode64} from '../week1/number-scale'
+import {encode64, decode64} from '../js/number-scale'
+import test from '../js/render'
 
 export default {
   name: 'number',
@@ -40,6 +41,9 @@ export default {
       }
       
     }
+  },
+  mounted(){
+    test();
   }
 
 }
