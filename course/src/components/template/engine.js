@@ -71,13 +71,21 @@ export default class Engine {
     //转成成node节点
     while (stack.length > 0) {
       let [pnode, pdom, scope] = stack.pop();
-
+        console.log('scope', scope, pnode.attr.get("if") )
       if (pnode.attr.get("if")){
-          let prop = pnode.attr.get("if").trim();
-          console.log("if", prop, scope[prop])
-          if(!scope[prop]){
-            break;
-          }
+        let prop = pnode.attr.get("if").trim();
+        let props = prop.split(".");
+      
+        let val = scope[props[0]];
+
+        props.slice(1).forEach((item) => {
+            val = val[item];
+        });
+        
+
+        if(!val){
+            continue;
+        }
       }
 
       if (pnode.attr.get("for")) {
@@ -160,7 +168,7 @@ export default class Engine {
     let attr = new Map();
     str = str.trim();
     str.replace(/(\w+)\s*=\s*['"](.*?)['"]/gm, (s0, s1, s2) => {
-      console.log('parseAttribute',s0, s1, s2)
+      
       attr.set(s1, s2);
       return s0;
     });
