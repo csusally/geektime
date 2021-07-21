@@ -12,7 +12,7 @@ export default class Engine {
     while (re1.test(template) || re2.test(template)) {
       //<div class="a">XXX</div>类型
       template = template.replace(re1, (s0, s1, s2, s3) => {
-        console.log('s2',s2)
+        console.log('s2',s0, s1, s2, s3)
         let attr = this.parseAttribute(s2);
         // let children = this.parseAttribute(s3);
         let node = new Vnode(s1, attr, [], null, s3);

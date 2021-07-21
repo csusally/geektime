@@ -14,7 +14,7 @@ let tmpl = `<div class="newslist">
 var data = {
     image: "some image0",
     name: "Name",
-    showImage: true,
+    showImage: false,
 };
 
 // var data1 = {
