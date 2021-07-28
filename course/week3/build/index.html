@@ -1,0 +1,35 @@
+Html Webpack Plugin:
+<pre>
+  Error: /Users/wujing/Documents/github/geektime/course/node_modules/lodash/lodash.js?:17203
+  /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ ".  /node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../webpack/buildin/module.js */   "./node_modules/webpack/buildin/module.js")(module)))
+                                                                                                                                                                                                                                                          ^
+  TypeError: __webpack_require__(...) is not a function
+  
+  - lodash.js?:17203 eval
+    [.]/[lodash]/lodash.js?:17203:245
+  
+  - index.html:108 Object../node_modules/lodash/lodash.js
+    /Users/wujing/Documents/github/geektime/course/week3/index.html:108:1
+  
+  - index.html:21 __webpack_require__
+    /Users/wujing/Documents/github/geektime/course/week3/index.html:21:30
+  
+  - loader.js:1 eval
+    [index.html?.]/[html-webpack-plugin]/lib/loader.js:1:9
+  
+  - index.html:97 Object../node_modules/html-webpack-plugin/lib/loader.js!./week3/index.html
+    /Users/wujing/Documents/github/geektime/course/week3/index.html:97:1
+  
+  - index.html:21 __webpack_require__
+    /Users/wujing/Documents/github/geektime/course/week3/index.html:21:30
+  
+  - index.html:85 
+    /Users/wujing/Documents/github/geektime/course/week3/index.html:85:18
+  
+  - index.html:88 
+    /Users/wujing/Documents/github/geektime/course/week3/index.html:88:10
+  
+  - index.js:247 HtmlWebpackPlugin.evaluateCompilationResult
+    [course]/[html-webpack-plugin]/index.js:247:28
+  
+</pre>
